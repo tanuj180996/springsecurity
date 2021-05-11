@@ -11,9 +11,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests().
-                antMatchers("/comments").authenticated()
-                .antMatchers("/contacts").authenticated()
-                .antMatchers("/balance").permitAll().
+                antMatchers("/comments").denyAll()
+                .antMatchers("/contacts").denyAll()
+                .antMatchers("/balance").denyAll().
                 and().
                 formLogin().
                 and().
